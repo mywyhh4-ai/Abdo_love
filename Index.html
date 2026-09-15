@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ملف عبدو السري ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+}
+
+body{
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 50% 40%,#190812 0%,#070309 48%,#020104 100%);
+    color:white;
+    font-family:Tahoma,Arial,sans-serif;
+}
+
+#stars{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:0;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    opacity:.5;
+    animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{
+        opacity:.15;
+        transform:scale(.6)
+    }
+    to{
+        opacity:.9;
+        transform:scale(1.4)
+    }
+}
+
+.screen{
+    position:relative;
+    z-index:2;
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:10px;
+}
+
+.container{
+    width:min(92%,520px);
+    text-align:center;
+}
+
+.classified{
+    color:#ff3158;
+    font-size:10px;
+    letter-spacing:4px;
+    margin-bottom:12px;
+    text-shadow:0 0 12px #ff3158;
+    animation:glitch 2s infinite;
+}
+
+@keyframes glitch{
+    0%,90%,100%{transform:none}
+    92%{transform:translateX(2px)}
+    94%{transform:translateX(-2px)}
+    96%{transform:translateX(1px)}
+}
+
+h1{
+    font-size:32px;
+    margin-bottom:7px;
+    text-shadow:
+        0 0 10px rgba(255,49,88,.7),
+        0 0 30px rgba(255,49,88,.3);
+}
+
+.subtitle{
+    color:#999;
+    font-size:12px;
+    margin-bottom:18px;
+}
+
+.file{
+    position:relative;
+    overflow:hidden;
+    width:100%;
+    background:linear-gradient(
+        145deg,
+        rgba(255,255,255,.05),
+        rgba(255,255,255,.012)
+    );
+    border:1px solid rgba(255,49,88,.45);
+    border-radius:18px;
+    padding:22px 14px;
+    box-shadow:
+        0 0 20px rgba(255,49,88,.12),
+        inset 0 0 30px rgba(255,49,88,.03);
+}
+
+.scan{
+    position:absolute;
+    left:0;
+    top:-3px;
+    width:100%;
+    height:2px;
+    background:#ff3158;
+    box-shadow:
+        0 0 5px #ff3158,
+        0 0 12px #ff3158,
+        0 0 25px #ff3158,
+        0 0 50px rgba(255,49,88,.7);
+    animation:scanMove 2.2s linear infinite;
+    z-index:20;
+    pointer-events:none;
+}
+
+@keyframes scanMove{
+    0%{
+        top:0;
+        opacity:0
+    }
+    10%{
+        opacity:1
+    }
+    50%{
+        opacity:1
+    }
+    90%{
+        opacity:1
+    }
+    100%{
+        top:100%;
+        opacity:0
+    }
+}
+
+.file-top{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:18px;
+    color:#666;
+    font-size:9px;
+    letter-spacing:1.5px;
+}
+
+.file-icon{
+    font-size:48px;
+    margin-bottom:8px;
+    filter:
+        drop-shadow(0 0 8px rgba(255,49,88,.6))
+        drop-shadow(0 0 25px rgba(255,49,88,.3));
+}
+
+.file-name{
+    font-size:21px;
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+.file-id{
+    color:#666;
+    font-size:10px;
+    margin-bottom:18px;
+}
+
+button{
+    border:none;
+    outline:none;
+    cursor:pointer;
+    color:white;
+    background:linear-gradient(135deg,#ff3158,#b9002c);
+    padding:12px 25px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:bold;
+    box-shadow:
+        0 0 12px rgba(255,49,88,.35),
+        0 0 30px rgba(255,49,88,.12);
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+button:active{
+    transform:scale(.96);
+}
+
+.secret{
+    display:none;
+    margin-top:18px;
+    text-align:center;
+}
+
+.line{
+    opacity:0;
+    transform:translateY(10px);
+    color:#ccc;
+    font-size:12px;
+    line-height:1.65;
+    margin:5px 0;
+    text-align:center;
+    transition:1s;
+}
+
+.line.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.red{
+    color:#ff3158;
+    text-shadow:0 0 8px rgba(255,49,88,.6);
+}
+
+.warning{
+    margin-top:10px;
+    color:#ff3158;
+    font-weight:bold;
+    font-size:13px;
+    opacity:0;
+    transition:1s;
+}
+
+.warning.show{
+    opacity:1;
+}
+
+/* صفحة تم احتلال قلبي */
+
+#occupied{
+    display:none;
+}
+
+.occupied-box{
+    position:relative;
+    width:min(94%,500px);
+    padding:40px 20px;
+    text-align:center;
+    border:1px solid rgba(255,49,88,.25);
+    border-radius:25px;
+    box-shadow:
+        inset 0 0 50px rgba(255,49,88,.03),
+        0 0 40px rgba(255,49,88,.05);
+}
+
+.occupied-icon{
+    font-size:55px;
+    margin-bottom:20px;
+    animation:lockPulse 1.5s infinite;
+}
+
+@keyframes lockPulse{
+    0%,100%{
+        transform:scale(1);
+        filter:drop-shadow(0 0 5px #ff3158);
+    }
+
+    50%{
+        transform:scale(1.08);
+        filter:drop-shadow(0 0 22px #ff3158);
+    }
+}
+
+.occupied-title{
+    color:#ff3158;
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:12px;
+    text-shadow:
+        0 0 10px #ff3158,
+        0 0 25px rgba(255,49,88,.4);
+}
+
+.occupied-sub{
+    color:#999;
+    font-size:12px;
+    margin-bottom:30px;
+}
+
+/* الصفحة الأخيرة */
+
+#final{
+    display:none;
+}
+
+.final-box{
+    position:relative;
+    width:min(94%,600px);
+    max-height:96vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:18px 12px;
+}
+
+.final-box::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border:1px solid rgba(255,49,88,.22);
+    border-radius:22px;
+    box-shadow:
+        inset 0 0 50px rgba(255,49,88,.03),
+        0 0 40px rgba(255,49,88,.04);
+}
+
+.final-content{
+    position:relative;
+    z-index:5;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.final-title{
+    color:#ff3158;
+    font-size:8px;
+    letter-spacing:3px;
+    margin-bottom:12px;
+    text-shadow:0 0 12px #ff3158;
+}
+
+.typingText{
+    width:100%;
+    max-width:560px;
+    color:white;
+    font-size:14px;
+    line-height:1.7;
+    text-align:center;
+    white-space:pre-line;
+    text-shadow:0 0 8px rgba(255,255,255,.15);
+}
+
+.typingText::after{
+    content:"|";
+    color:#ff3158;
+    font-weight:bold;
+    animation:cursorBlink .7s infinite;
+}
+
+@keyframes cursorBlink{
+    0%,50%{opacity:1}
+    51%,100%{opacity:0}
+}
+
+.heart-final{
+    position:relative;
+    flex-shrink:0;
+    width:34px;
+    height:34px;
+    margin:8px auto 14px;
+    transform:rotate(-45deg) scale(0);
+    background:#ff3158;
+    border-radius:6px;
+    opacity:0;
+    filter:
+        drop-shadow(0 0 7px #ff3158)
+        drop-shadow(0 0 18px rgba(255,49,88,.8));
+    transition:1s cubic-bezier(.17,.89,.32,1.49);
+}
+
+.heart-final::before,
+.heart-final::after{
+    content:"";
+    position:absolute;
+    width:34px;
+    height:34px;
+    background:#ff3158;
+    border-radius:50%;
+}
+
+.heart-final::before{
+    top:-17px;
+    left:0;
+}
+
+.heart-final::after{
+    left:17px;
+    top:0;
+}
+
+.heart-final.show{
+    opacity:1;
+    transform:rotate(-45deg) scale(1);
+    animation:heartBeat 1.5s infinite;
+}
+
+@keyframes heartBeat{
+    0%,100%{
+        filter:
+            drop-shadow(0 0 7px #ff3158)
+            drop-shadow(0 0 18px rgba(255,49,88,.7));
+    }
+
+    50%{
+        filter:
+            drop-shadow(0 0 12px #ff3158)
+            drop-shadow(0 0 28px rgba(255,49,88,1));
+    }
+}
+
+.closed-file-text{
+    color:#ff3158;
+    font-size:10px;
+    opacity:0;
+    transform:translateY(7px);
+    transition:1s;
+    text-shadow:0 0 8px rgba(255,49,88,.35);
+}
+
+.closed-file-text.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.love-word{
+    color:#ff3158;
+    font-size:20px;
+    font-weight:bold;
+    margin-top:6px;
+    opacity:0;
+    transform:translateY(7px);
+    transition:1s;
+    text-shadow:
+        0 0 8px #ff3158,
+        0 0 20px rgba(255,49,88,.5);
+}
+
+.love-word.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.float-heart{
+    position:fixed;
+    bottom:-30px;
+    color:#ff3158;
+    pointer-events:none;
+    z-index:30;
+    animation:floatUp linear forwards;
+    text-shadow:
+        0 0 8px #ff3158,
+        0 0 20px rgba(255,49,88,.6);
+}
+
+@keyframes floatUp{
+    0%{
+        transform:translateY(0) scale(.5) rotate(0);
+        opacity:0;
+    }
+
+    10%{
+        opacity:1
+    }
+
+    50%{
+        transform:
+            translateY(-45vh)
+            translateX(20px)
+            scale(1)
+            rotate(15deg);
+        opacity:.9;
+    }
+
+    100%{
+        transform:
+            translateY(-110vh)
+            translateX(-35px)
+            scale(.7)
+            rotate(-20deg);
+        opacity:0;
+    }
+}
+
+@media(max-width:600px){
+
+    .screen{
+        padding:8px;
+    }
+
+    h1{
+        font-size:30px;
+    }
+
+    .file{
+        padding:20px 12px;
+    }
+
+    .line{
+        font-size:12px;
+    }
+
+    .typingText{
+        font-size:14px;
+        line-height:1.65;
+    }
+
+    .occupied-title{
+        font-size:20px;
+    }
+
+    .occupied-icon{
+        font-size:48px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="stars"></div>
+
+<!-- الصفحة الأولى -->
+
+<section id="main" class="screen">
+
+    <div class="container">
+
+        <div class="classified">
+            CLASSIFIED • TOP SECRET
+        </div>
+
+        <h1>
+            ملف عبدو
+        </h1>
+
+        <div class="subtitle">
+            ملف سري للغاية • ممنوع الفتح
+        </div>
+
+        <div class="file">
+
+            <div class="scan"></div>
+
+            <div class="file-top">
+                <span>SECRET FILE</span>
+                <span>ABDO_001</span>
+            </div>
+
+            <div class="file-icon">
+                🔐
+            </div>
+
+            <div class="file-name">
+                ملف عبدو السري
+            </div>
+
+            <div class="file-id">
+                SUBJECT: ABDO ❤️
+            </div>
+
+            <button onclick="openFile()">
+                🔓 فتح الملف
+            </button>
+
+            <div id="secret" class="secret">
+
+                <div class="line">
+                    جاري تحليل البيانات...
+                </div>
+
+                <div class="line">
+                    جاري البحث عن معلومات سرية...
+                </div>
+
+                <div class="line red">
+                    تم العثور على شخص مهم جدًا.
+                </div>
+
+                <div class="line">
+                    المشتبه به:
+                    <span class="red">
+                        عبدو ❤️
+                    </span>
+                </div>
+
+                <div class="line">
+                    تم رصد ابتسامات مي عند ذكر اسمه...
+                </div>
+
+                <div class="line">
+                    تم رصد تفكير زائد في عبدو...
+                </div>
+
+                <div class="line red">
+                    ⚠ مستوى التعلق: مرتفع جدًا
+                </div>
+
+                <div class="line">
+                    جاري تحديد مكان القلب...
+                </div>
+
+                <div id="warning" class="warning">
+                    ⚠ تم تحديد الموقع بنجاح ❤️
+                </div>
+
+                <br>
+
+                <button onclick="finish()">
+                    🔐 كشف الحقيقة
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- صفحة الاحتلال -->
+
+<section id="occupied" class="screen">
+
+    <div class="occupied-box">
+
+        <div class="occupied-icon">
+            ❤️
+        </div>
+
+        <div class="occupied-title">
+            تم احتلال قلبي بنجاح
+        </div>
+
+        <div class="occupied-sub">
+            تم تأكيد هوية الشخص المسؤول عن العملية...
+        </div>
+
+        <button onclick="showFinal()">
+            💌 حاجة أخيرة...
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- الصفحة الأخيرة -->
+
+<section id="final" class="screen">
+
+    <div class="final-box">
+
+        <div class="final-content">
+
+            <div class="final-title">
+                SYSTEM BREACH • TRUTH FOUND
+            </div>
+
+            <div id="typingText" class="typingText"></div>
+
+            <div id="heartFinal" class="heart-final"></div>
+
+            <div id="closedFileText" class="closed-file-text">
+                ملف اتقفل لكن حبي ليك لسا متقفلش
+            </div>
+
+            <div id="loveWord" class="love-word">
+                بحبك
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* ================= النجوم ================= */
+
+const stars = document.getElementById("stars");
+
+for(let i = 0; i < 110; i++){
+
+    const star = document.createElement("div");
+
+    star.className = "star";
+
+    star.style.left =
+        Math.random() * 100 + "%";
+
+    star.style.top =
+        Math.random() * 100 + "%";
+
+    const size =
+        Math.random() * 2 + 1;
+
+    star.style.width =
+        size + "px";
+
+    star.style.height =
+        size + "px";
+
+    star.style.animationDelay =
+        Math.random() * 2 + "s";
+
+    stars.appendChild(star);
+}
+
+
+/* ================= الصوت ================= */
+
+let audioContext = null;
+
+function initAudio(){
+
+    if(!audioContext){
+
+        audioContext = new (
+            window.AudioContext ||
+            window.webkitAudioContext
+        )();
+
+    }
+
+    if(audioContext.state === "suspended"){
+
+        audioContext.resume();
+
+    }
+
+}
+
+
+/* ================= صوت الكيبورد ================= */
+
+function typingSound(){
+
+    if(!audioContext) return;
+
+    const now =
+        audioContext.currentTime;
+
+    const duration = 0.035;
+
+    const bufferSize =
+        Math.floor(
+            audioContext.sampleRate *
+            duration
+        );
+
+    const buffer =
+        audioContext.createBuffer(
+            1,
+            bufferSize,
+            audioContext.sampleRate
+        );
+
+    const data =
+        buffer.getChannelData(0);
+
+
+    /* صوت ضغطة الكيبورد */
+
+    for(let i = 0; i < bufferSize; i++){
+
+        const t =
+            i / bufferSize;
+
+        const noise =
+            Math.random() * 2 - 1;
+
+        data[i] =
+            noise *
+            Math.pow(1 - t, 3) *
+            0.65;
+
+    }
+
+
+    const source =
+        audioContext.createBufferSource();
+
+
+    /* فلتر يجعل الصوت أقرب لتكة كيبورد */
+
+    const filter =
+        audioContext.createBiquadFilter();
+
+    filter.type = "bandpass";
+
+    filter.frequency.setValueAtTime(
+        2800 + Math.random() * 700,
+        now
+    );
+
+    filter.Q.setValueAtTime(
+        1.8,
+        now
+    );
+
+
+    const gain =
+        audioContext.createGain();
+
+    gain.gain.setValueAtTime(
+        0.12,
+        now
+    );
+
+    gain.gain.exponentialRampToValueAtTime(
+        0.001,
+        now + duration
+    );
+
+
+    source.buffer = buffer;
+
+    source.connect(filter);
+
+    filter.connect(gain);
+
+    gain.connect(
+        audioContext.destination
+    );
+
+
+    source.start(now);
+
+    source.stop(
+        now + duration
+    );
+
+
+    /* =================
+       التكة الميكانيكية
+       ================= */
+
+    const click =
+        audioContext.createOscillator();
+
+    const clickGain =
+        audioContext.createGain();
+
+
+    click.type = "square";
+
+
+    click.frequency.setValueAtTime(
+        700 + Math.random() * 300,
+        now
+    );
+
+    click.frequency.exponentialRampToValueAtTime(
+        180,
+        now + 0.018
+    );
+
+
+    clickGain.gain.setValueAtTime(
+        0.025,
+        now
+    );
+
+    clickGain.gain.exponentialRampToValueAtTime(
+        0.001,
+        now + 0.018
+    );
+
+
+    click.connect(clickGain);
+
+    clickGain.connect(
+        audioContext.destination
+    );
+
+
+    click.start(now);
+
+    click.stop(
+        now + 0.018
+    );
+
+}
+
+
+/* ================= فتح الملف ================= */
+
+function openFile(){
+
+    initAudio();
+
+    const button =
+        document.querySelector(
+            "#main .file > button"
+        );
+
+    const secret =
+        document.getElementById("secret");
+
+
+    button.style.display =
+        "none";
+
+    secret.style.display =
+        "block";
+
+
+    const lines =
+        document.querySelectorAll(".line");
+
+
+    lines.forEach((line,index)=>{
+
+        setTimeout(()=>{
+
+            line.classList.add("show");
+
+            typingSound();
+
+        },index * 850);
+
+    });
+
+
+    setTimeout(()=>{
+
+        document
+            .getElementById("warning")
+            .classList.add("show");
+
+        typingSound();
+
+    },lines.length * 850 + 400);
+
+}
+
+
+/* ================= كشف الحقيقة ================= */
+
+function finish(){
+
+    initAudio();
+
+    document
+        .getElementById("main")
+        .style.display =
+        "none";
+
+    document
+        .getElementById("occupied")
+        .style.display =
+        "flex";
+
+}
+
+
+/* ================= الصفحة الأخيرة ================= */
+
+function showFinal(){
+
+    initAudio();
+
+    document
+        .getElementById("occupied")
+        .style.display =
+        "none";
+
+    document
+        .getElementById("final")
+        .style.display =
+        "flex";
+
+
+    startTyping();
+
+}
+
+
+/* ================= الكتابة ================= */
+
+function startTyping(){
+
+    const textElement =
+        document.getElementById(
+            "typingText"
+        );
+
+
+    const messages = [
+
+        "يمكن مفيش كلام يقدر يوصف مكانتك عندي...",
+
+        "بس في حاجة واحدة متأكدة منها ❤️",
+
+        "إني لسه بحبك يا عبدو، ولسه وجودك بيفرق معايا أكتر مما تتخيل.",
+
+        "ومهما حصل ومهما عدى وقت، مشاعري ناحيتك لسه موجودة.",
+
+        "أنا مش شايفة حد غيرك في حياتي، ومفيش حد قدر ياخد مكانك.",
+
+        "إنت الشخص اللي قلبي اختاره... ولسه كل مرة بيختارك من جديد.",
+
+        "ولو سألتني مين الشخص اللي نفسي يفضل معايا؟",
+
+        "هقولك إنت... وبس ❤️"
+
+    ];
+
+
+    let messageIndex = 0;
+
+
+    function typeMessage(){
+
+        if(messageIndex >= messages.length){
+
+            setTimeout(()=>{
+
+                document
+                    .getElementById(
+                        "heartFinal"
+                    )
+                    .classList.add("show");
+
+
+                setTimeout(()=>{
+
+                    document
+                        .getElementById(
+                            "closedFileText"
+                        )
+                        .classList.add("show");
+
+
+                    setTimeout(()=>{
+
+                        document
+                            .getElementById(
+                                "loveWord"
+                            )
+                            .classList.add("show");
+
+
+                        createHearts();
+
+                    },700);
+
+                },800);
+
+            },600);
+
+            return;
+
+        }
+
+
+        const text =
+            messages[messageIndex];
+
+        let charIndex = 0;
+
+
+        function typeChar(){
+
+            if(charIndex < text.length){
+
+                const char =
+                    text.charAt(
+                        charIndex
+                    );
+
+
+                textElement.textContent +=
+                    char;
+
+
+                /* صوت مع كل حرف */
+
+                if(char.trim() !== ""){
+
+                    typingSound();
+
+                }
+
+
+                charIndex++;
+
+
+                setTimeout(
+                    typeChar,
+                    45
+                );
+
+            }
+
+            else{
+
+                textElement.textContent +=
+                    "\n\n";
+
+                messageIndex++;
+
+
+                setTimeout(
+                    typeMessage,
+                    600
+                );
+
+            }
+
+        }
+
+
+        typeChar();
+
+    }
+
+
+    typeMessage();
+
+}
+
+
+/* ================= القلوب الطائرة ================= */
+
+function createHearts(){
+
+    setInterval(()=>{
+
+        const heart =
+            document.createElement(
+                "div"
+            );
+
+        heart.className =
+            "float-heart";
+
+
+        const symbols = [
+            "❤",
+            "♡",
+            "♥",
+            "💗"
+        ];
+
+
+        heart.textContent =
+            symbols[
+                Math.floor(
+                    Math.random() *
+                    symbols.length
+                )
+            ];
+
+
+        heart.style.left =
+            Math.random() * 100 +
+            "vw";
+
+
+        heart.style.fontSize =
+            (12 + Math.random() * 18) +
+            "px";
+
+
+        const duration =
+            4 + Math.random() * 4;
+
+
+        heart.style.animationDuration =
+            duration + "s";
+
+
+        document.body.appendChild(
+          heart
+          )
+          
+          
+          
+          seTimeout(()=>{
+             heart.remove();
+          },duration * 1000);
+    },400);
+}
+</script>
+</body>
+
+</html>
